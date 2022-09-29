@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		B796B02D28DF76F700DAD5F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796B02C28DF76F700DAD5F0 /* AppDelegate.swift */; };
 		B796B02F28DF76F700DAD5F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796B02E28DF76F700DAD5F0 /* SceneDelegate.swift */; };
-		B796B03128DF76F700DAD5F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796B03028DF76F700DAD5F0 /* ViewController.swift */; };
+		B796B03128DF76F700DAD5F0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796B03028DF76F700DAD5F0 /* MainViewController.swift */; };
 		B796B03428DF76F700DAD5F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B796B03228DF76F700DAD5F0 /* Main.storyboard */; };
 		B796B03628DF76F900DAD5F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B796B03528DF76F900DAD5F0 /* Assets.xcassets */; };
 		B796B03928DF76F900DAD5F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B796B03728DF76F900DAD5F0 /* LaunchScreen.storyboard */; };
+		B796B04728DF7A7800DAD5F0 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796B04628DF7A7800DAD5F0 /* Model.swift */; };
+		B796B04A28DF7AAB00DAD5F0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796B04928DF7AAB00DAD5F0 /* NetworkManager.swift */; };
+		B796B04D28DF80B000DAD5F0 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B796B04C28DF80B000DAD5F0 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B796B02928DF76F700DAD5F0 /* HarryPotterApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarryPotterApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B796B02C28DF76F700DAD5F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B796B02E28DF76F700DAD5F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B796B03028DF76F700DAD5F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B796B03028DF76F700DAD5F0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B796B03328DF76F700DAD5F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B796B03528DF76F900DAD5F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B796B03828DF76F900DAD5F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B796B03A28DF76F900DAD5F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B796B04628DF7A7800DAD5F0 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		B796B04928DF7AAB00DAD5F0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		B796B04C28DF80B000DAD5F0 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,67 @@
 		B796B02B28DF76F700DAD5F0 /* HarryPotterApi */ = {
 			isa = PBXGroup;
 			children = (
-				B796B02C28DF76F700DAD5F0 /* AppDelegate.swift */,
-				B796B02E28DF76F700DAD5F0 /* SceneDelegate.swift */,
-				B796B03028DF76F700DAD5F0 /* ViewController.swift */,
-				B796B03228DF76F700DAD5F0 /* Main.storyboard */,
+				B796B04128DF773000DAD5F0 /* ViewControllers */,
+				B796B04E28DF80B800DAD5F0 /* Views */,
+				B796B04828DF7A8B00DAD5F0 /* Models */,
+				B796B04B28DF7AC600DAD5F0 /* Services */,
+				B796B04228DF773F00DAD5F0 /* Storyboards */,
+				B796B04028DF770B00DAD5F0 /* App */,
 				B796B03528DF76F900DAD5F0 /* Assets.xcassets */,
-				B796B03728DF76F900DAD5F0 /* LaunchScreen.storyboard */,
 				B796B03A28DF76F900DAD5F0 /* Info.plist */,
 			);
 			path = HarryPotterApi;
+			sourceTree = "<group>";
+		};
+		B796B04028DF770B00DAD5F0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B796B02C28DF76F700DAD5F0 /* AppDelegate.swift */,
+				B796B02E28DF76F700DAD5F0 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B796B04128DF773000DAD5F0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B796B03028DF76F700DAD5F0 /* MainViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B796B04228DF773F00DAD5F0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B796B03228DF76F700DAD5F0 /* Main.storyboard */,
+				B796B03728DF76F900DAD5F0 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B796B04828DF7A8B00DAD5F0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B796B04628DF7A7800DAD5F0 /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B796B04B28DF7AC600DAD5F0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B796B04928DF7AAB00DAD5F0 /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B796B04E28DF80B800DAD5F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B796B04C28DF80B000DAD5F0 /* TableViewCell.swift */,
+			);
+			name = Views;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +141,8 @@
 			dependencies = (
 			);
 			name = HarryPotterApi;
+			packageProductDependencies = (
+			);
 			productName = HarryPotterApi;
 			productReference = B796B02928DF76F700DAD5F0 /* HarryPotterApi.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +171,9 @@
 				Base,
 			);
 			mainGroup = B796B02028DF76F700DAD5F0;
+			packageReferences = (
+				B796B04328DF77A600DAD5F0 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = B796B02A28DF76F700DAD5F0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +201,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B796B03128DF76F700DAD5F0 /* ViewController.swift in Sources */,
+				B796B03128DF76F700DAD5F0 /* MainViewController.swift in Sources */,
 				B796B02D28DF76F700DAD5F0 /* AppDelegate.swift in Sources */,
+				B796B04A28DF7AAB00DAD5F0 /* NetworkManager.swift in Sources */,
+				B796B04D28DF80B000DAD5F0 /* TableViewCell.swift in Sources */,
 				B796B02F28DF76F700DAD5F0 /* SceneDelegate.swift in Sources */,
+				B796B04728DF7A7800DAD5F0 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +422,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B796B04328DF77A600DAD5F0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = B796B02128DF76F700DAD5F0 /* Project object */;
 }
