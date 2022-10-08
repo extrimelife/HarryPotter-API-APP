@@ -14,6 +14,7 @@ final class MainViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = 110
         fetch()
     }
     
@@ -30,6 +31,13 @@ final class MainViewController: UITableViewController {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let infoVc = segue.destination as? InfoViewController else { return }
+        guard let index = tableView.indexPathForSelectedRow else {return}
+        let harryPotter = harryPotter[index.row]
+        infoVc.character = harryPotter
+    }
+    
     //MARK: - Private methods
     
     private func fetch() {
@@ -40,3 +48,8 @@ final class MainViewController: UITableViewController {
     }
 }
 
+extension MainViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}

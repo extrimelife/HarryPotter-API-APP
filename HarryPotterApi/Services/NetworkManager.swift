@@ -34,6 +34,16 @@ class NetworkManager {
             
         }.resume()
     }
+    
+    func fetchImage(from url: String?, completion: @escaping(Data) -> Void) {
+        guard let url = URL(string: url ?? "") else { return }
+        DispatchQueue.global().async {
+            guard let imageUrl = try? Data(contentsOf: url) else { return }
+            DispatchQueue.main.async {
+                completion(imageUrl)
+            }
+        }
+    }
 }
 
 enum Link: String {

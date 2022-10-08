@@ -15,5 +15,7 @@ struct Character: Decodable {
     let interpretedBy: String?
     let child: [String]?
     let image: String?
+    
 }
+
 

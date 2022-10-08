@@ -3,6 +3,8 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -10,7 +12,7 @@
         <scene sceneID="blK-b7-jpD">
             <objects>
                 <tableViewController id="t1K-DD-15H" customClass="MainViewController" customModule="HarryPotterApi" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="JIk-DI-o0O">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="JIk-DI-o0O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -25,8 +27,8 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kfL-vY-iU4">
                                             <rect key="frame" x="32" y="15" width="75" height="81"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="75" id="aki-TI-QlQ"/>
-                                                <constraint firstAttribute="width" constant="75" id="eEK-Xh-KNJ"/>
+                                                <constraint firstAttribute="height" constant="75" id="qvY-YS-751"/>
+                                                <constraint firstAttribute="width" constant="75" id="xB4-W8-1Ho"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkK-M8-HQv">
@@ -50,6 +52,7 @@
                                 <connections>
                                     <outlet property="actorImage" destination="kfL-vY-iU4" id="Qhb-pu-CfM"/>
                                     <outlet property="fullNameLabel" destination="DkK-M8-HQv" id="jid-hv-nvP"/>
+                                    <segue destination="xqO-9q-tpy" kind="show" identifier="info" id="Fpk-xs-x5i"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -63,6 +66,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DIa-y2-Y6f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-864" y="-468"/>
+        </scene>
+        <!--Personage-->
+        <scene sceneID="lfm-2S-G5j">
+            <objects>
+                <viewController id="xqO-9q-tpy" customClass="InfoViewController" customModule="HarryPotterApi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fpZ-c3-oqk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k01-TY-oSe">
+                                <rect key="frame" x="20" y="47" width="374" height="262"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="9jq-s3-bAL"/>
+                                    <constraint firstAttribute="height" constant="262" id="sVG-yc-xkS"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pBG-J1-jVp"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="k01-TY-oSe" firstAttribute="centerY" secondItem="fpZ-c3-oqk" secondAttribute="centerY" constant="-200" id="9Up-jv-TP2"/>
+                            <constraint firstItem="k01-TY-oSe" firstAttribute="centerX" secondItem="fpZ-c3-oqk" secondAttribute="centerX" id="Ygo-Ja-zkY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Personage" leftItemsSupplementBackButton="YES" id="anN-y0-gN9"/>
+                    <connections>
+                        <outlet property="imageView" destination="k01-TY-oSe" id="7WO-RA-d9z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YXC-Iq-eJJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-162.31884057971016" y="-468.08035714285711"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jrk-ga-hMz">
@@ -88,4 +123,9 @@
             <point key="canvasLocation" x="-1665" y="-468"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
