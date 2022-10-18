@@ -21,7 +21,7 @@ final class TableViewCell: UITableViewCell {
     
     // MARK: - Public methods
     func configure(with character: Character) {
-        fullNameLabel.text = character.character
+        fullNameLabel.text = character.name
         DispatchQueue.main.async {
             NetworkManager.shared.fetchImage(from: character.image) { data in
                 self.actorImage.image = UIImage(data: data)

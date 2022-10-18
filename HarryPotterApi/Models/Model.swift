@@ -9,13 +9,17 @@ import Foundation
 
 struct Character: Decodable {
     
-    let character: String?
-    let hogwartsStudent: Bool?
-    let hogwartsHouse: String?
-    let interpretedBy: String?
-    let child: [String]?
-    let image: String?
+    let name: String
+    let dateOfBirth: String
+    let house: String
+    let actor: String
+    let image: String
+    var commonInfo: String {
+        """
+        House:  \(house).
+        Actor:  \(actor).
+        Date of Birth:  \(dateOfBirth).
+        """
+    }
     
 }
-
-

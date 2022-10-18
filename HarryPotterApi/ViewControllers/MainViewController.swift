@@ -11,10 +11,9 @@ final class MainViewController: UITableViewController {
     
     private var harryPotter: [Character] = []
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 110
+        tableView.rowHeight = 115
         fetch()
     }
     
@@ -28,6 +27,7 @@ final class MainViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TableViewCell else { return UITableViewCell() }
         let harry = harryPotter[indexPath.row]
         cell.configure(with: harry)
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -48,8 +48,4 @@ final class MainViewController: UITableViewController {
     }
 }
 
-extension MainViewController {
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
+

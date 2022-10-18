@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NetworkManager {
+final class NetworkManager {
     
     static let shared = NetworkManager()
     
@@ -47,5 +47,5 @@ class NetworkManager {
 }
 
 enum Link: String {
-    case harryPotterApi = "https://fedeperin-harry-potter-api-en.herokuapp.com/characters"
+    case harryPotterApi = "https://hp-api.herokuapp.com/api/characters"
 }
