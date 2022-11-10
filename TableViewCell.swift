@@ -16,18 +16,36 @@ final class TableViewCell: UITableViewCell {
         }
     }
     
+    private var imageUrl: URL? {
+        didSet {
+            actorImage.image = nil
+        }
+    }
+    
     @IBOutlet weak var fullNameLabel: UILabel!
     
     
     // MARK: - Public methods
     func configure(with character: Character) {
         fullNameLabel.text = character.name
-        DispatchQueue.main.async {
-            NetworkManager.shared.fetchImage(from: character.image) { data in
-                self.actorImage.image = UIImage(data: data)
+        imageUrl = URL(string: character.image)
+        guard let url = imageUrl else {
+            actorImage.image = UIImage(systemName: "pencil")
+            return
+        }
+        NetworkManager.shared.fetchImage(from: url) { data in
+            if url == self.imageUrl {
+                switch data {
+                case .success(let data):
+                    self.actorImage.image = UIImage(data: data)
+                case .failure(let error):
+                    print(error)
+                }
             }
         }
     }
 }
+
+
 
 
