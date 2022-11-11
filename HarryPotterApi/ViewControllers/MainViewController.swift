@@ -9,7 +9,8 @@ import UIKit
 
 final class MainViewController: UITableViewController {
     
-    //MARK: -
+    //MARK: - Privet properties
+    
     private var harryPotter: [Character] = []
     private var filteredCharacter: [Character] = []
     private let searchController = UISearchController(searchResultsController: nil)
@@ -45,8 +46,8 @@ final class MainViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let infoVc = segue.destination as? InfoViewController else { return }
-        guard let index = tableView.indexPathForSelectedRow else {return}
-        let harryPotter = harryPotter[index.row]
+        guard let indexPath = tableView.indexPathForSelectedRow else {return}
+        let harryPotter = isFiltering ? filteredCharacter[indexPath.row] : harryPotter[indexPath.row]
         infoVc.character = harryPotter
     }
     
