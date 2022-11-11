@@ -9,7 +9,7 @@ import UIKit
 
 final class MainViewController: UITableViewController {
     
-    //MARK: - Privet properties
+    //MARK: - Private properties
     
     private var harryPotter: [Character] = []
     private var filteredCharacter: [Character] = []
