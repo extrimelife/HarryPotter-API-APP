@@ -22,7 +22,7 @@ final class NetworkManager {
     func fetchData(from url: String?, with completion: @escaping([Character]) -> Void) {
         guard let url = URL(string: url ?? "") else { return }
         
-        URLSession.shared.dataTask(with: url) { data, _, error in
+        URLSession.shared.dataTask(with: url) { data, _ , error in
             guard let data = data else {
                 print(error?.localizedDescription ?? "No error description")
                 return
@@ -58,5 +58,5 @@ final class NetworkManager {
 }
 
 enum Link: String {
-    case harryPotterApi = "https://hp-api.herokuapp.com/api/characters"
+    case harryPotterApi = "https://hp-api.onrender.com/api/characters"
 }

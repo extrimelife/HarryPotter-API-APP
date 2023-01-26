@@ -79,13 +79,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k01-TY-oSe">
-                                <rect key="frame" x="107" y="76" width="200" height="200"/>
+                                <rect key="frame" x="57" y="26" width="300" height="300"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="2ra-8l-Zwh"/>
-                                    <constraint firstAttribute="height" constant="200" id="9ZS-hd-1et"/>
+                                    <constraint firstAttribute="height" constant="300" id="SnH-N8-sz3"/>
+                                    <constraint firstAttribute="width" constant="300" id="jft-Zi-Mfn"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6p-W6-0cz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6p-W6-0cz">
                                 <rect key="frame" x="107" y="326" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="DTw-sc-OhK"/>
@@ -100,9 +101,10 @@
                         <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstItem="X6p-W6-0cz" firstAttribute="centerY" secondItem="fpZ-c3-oqk" secondAttribute="centerY" constant="50" id="6x9-12-obe"/>
-                            <constraint firstItem="k01-TY-oSe" firstAttribute="centerY" secondItem="fpZ-c3-oqk" secondAttribute="centerY" constant="-200" id="9Up-jv-TP2"/>
                             <constraint firstItem="X6p-W6-0cz" firstAttribute="centerX" secondItem="fpZ-c3-oqk" secondAttribute="centerX" id="TCr-ol-Yf4"/>
-                            <constraint firstItem="k01-TY-oSe" firstAttribute="centerX" secondItem="fpZ-c3-oqk" secondAttribute="centerX" id="Ygo-Ja-zkY"/>
+                            <constraint firstItem="k01-TY-oSe" firstAttribute="centerY" secondItem="fpZ-c3-oqk" secondAttribute="centerY" constant="-200" id="dKZ-UW-iAu"/>
+                            <constraint firstItem="k01-TY-oSe" firstAttribute="centerY" secondItem="fpZ-c3-oqk" secondAttribute="centerY" constant="-200" id="mZr-91-5vL"/>
+                            <constraint firstItem="k01-TY-oSe" firstAttribute="centerX" secondItem="fpZ-c3-oqk" secondAttribute="centerX" id="qDc-uR-SOY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="anN-y0-gN9"/>

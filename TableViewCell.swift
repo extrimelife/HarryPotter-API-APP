@@ -12,7 +12,6 @@ final class TableViewCell: UITableViewCell {
     @IBOutlet weak var actorImage: UIImageView! {
         didSet {
             actorImage.layer.cornerRadius = actorImage.frame.width / 2
-            
         }
     }
     
