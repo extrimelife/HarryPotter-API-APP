@@ -32,11 +32,11 @@ final class TableViewCell: UITableViewCell {
             actorImage.image = UIImage(systemName: "pencil")
             return
         }
-        NetworkManager.shared.fetchImage(from: url) { data in
+        NetworkManager.shared.fetchImage(from: url) { [unowned self] data in
             if url == self.imageUrl {
                 switch data {
                 case .success(let data):
-                    self.actorImage.image = UIImage(data: data)
+                    actorImage.image = UIImage(data: data)
                 case .failure(let error):
                     print(error)
                 }

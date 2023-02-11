@@ -63,9 +63,9 @@ final class MainViewController: UITableViewController {
     }
     
     private func fetch() {
-        NetworkManager.shared.fetchData(from: Link.harryPotterApi.rawValue) { harry  in
-            self.harryPotter = harry
-            self.tableView.reloadData()
+        NetworkManager.shared.fetchData(from: Link.harryPotterApi.rawValue) { [unowned self] harry  in
+            harryPotter = harry
+            tableView.reloadData()
         }
     }
 }

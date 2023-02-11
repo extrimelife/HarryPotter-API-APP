@@ -36,12 +36,12 @@ final class InfoViewController: UIViewController {
         imageUrl = URL(string: character.image)
         guard let url = imageUrl else { return }
         NetworkManager.shared.fetchImage(from: url) { [unowned self] data in
-            if url == self.imageUrl {
+            if url == imageUrl {
                 switch data {
                 case .success(let data):
-                    self.imageView.image = UIImage(data: data)
-                    self.navigationItem.title = self.character.name
-                    self.descriptionLabel.text = self.character.commonInfo
+                    imageView.image = UIImage(data: data)
+                    navigationItem.title = character.name
+                    descriptionLabel.text = character.commonInfo
                 case .failure(let error):
                     print(error)
                 }
